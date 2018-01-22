@@ -87,7 +87,7 @@ function Decoder(bytes, port) {
                 decoded.p = pRaw * 4 / 100.0;
                 decoded.rh = hRaw / 256 * 100;
                 //decoded.tDewC = dewpoint(decoded.tempC, decoded.rh);
-				result.g = gRaw * 4 / 100.0;
+				decoded.g = gRaw * 4 / 100.0;
             }
 
             if (flags & 0x10) {
@@ -220,7 +220,8 @@ function Decoder(bytes, port) {
                 decoded.error = "none";
                 decoded.p = pRaw * 4 / 100.0;
                 decoded.rh = hRaw / 256 * 100;
-                decoded.tDewC = dewpoint(decoded.tempC, decoded.rh);
+                //decoded.tDewC = dewpoint(decoded.tempC, decoded.rh);
+				decoded.g = gRaw * 4 / 100.0;
             }
 
             if (flags & 0x10) {
